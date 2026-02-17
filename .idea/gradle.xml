@@ -10,8 +10,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Modulo_1" />
-            <option value="$PROJECT_DIR$/Modulo_2" />
+            <option value="$PROJECT_DIR$/Lesson_1" />
+            <option value="$PROJECT_DIR$/Lesson_2" />
             <option value="$PROJECT_DIR$/Registro_Usuarios" />
             <option value="$PROJECT_DIR$/app" />
           </set>
