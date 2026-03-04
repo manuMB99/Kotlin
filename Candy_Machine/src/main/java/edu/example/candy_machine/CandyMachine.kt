@@ -88,7 +88,7 @@ fun main(){
             2 -> sellProduct(chips, cashRegister)
             3 -> sellProduct(gum, cashRegister)
             4 -> sellProduct(cookies, cashRegister)
-            else -> println("Invalid selection.") // El 'else' es como el 'default' de Java
+            else -> println("Invalid selection.")
         }
         println("Closing machine... Total cash collected: $${cashRegister.currentBalance()}")
         showSelection()
