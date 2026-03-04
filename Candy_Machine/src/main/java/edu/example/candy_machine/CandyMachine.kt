@@ -1,4 +1,4 @@
-package edu.example.candymachine
+package edu.example.candy_machine
 
 class CashRegister(cashIn: Int = 500) {
     private var cashOnHand: Int = if (cashIn >= 0) cashIn else 500
@@ -41,33 +41,32 @@ fun showSelection()
     println(menu)
 }
 
-fun sellProduct(product: Dispenser, cRegister: CashRegister)
-{
-    var price: Int
-    var coinsInserted: Int
-    var coinsRequired: Int
+fun sellProduct(product: Dispenser, cRegister: CashRegister) {
+    if (product.getCount() > 0) {
+        val price = product.getProductCost()
+        var coinsInserted = 0
+        var coinsRequired = price
 
-    if(product.getCount() > 0)
-    {
-        price = product.getProductCost()
-        coinsRequired = price
-        coinsInserted = 0
-
-        while (coinsRequired > 0)
-        {
-            println("Please deposit" + coinsRequired + "cents: ")
-            coinsInserted += readln().toInt()
+        while (coinsRequired > 0) {
+            println("Please deposit $coinsRequired cents: ")
+            val input = readln().toIntOrNull() ?: 0
+            coinsInserted += input
             coinsRequired = price - coinsInserted
         }
-        println()
-
-        cRegister.acceptAmount(coinsInserted)
+        cRegister.acceptAmount(price)
         product.makeSale()
+        println("\nCollect your item at the bottom and enjoy.")
 
-        println("Collect your item at the bottom and enjoy. \n")
+        if (coinsInserted > price) {
+            val change = coinsInserted - price
+            println("Your change is $change cents. Don't forget it! \n")
+        } else {
+            println()
+        }
+
+    } else {
+        println("Sorry, this item is sold out. \n")
     }
-    else
-        println("Sorry this item is sold out. \n")
 }
 
 fun main(){

@@ -10,6 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Candy_Machine" />
             <option value="$PROJECT_DIR$/Lesson_1" />
             <option value="$PROJECT_DIR$/Lesson_2" />
             <option value="$PROJECT_DIR$/Lesson_3" />
