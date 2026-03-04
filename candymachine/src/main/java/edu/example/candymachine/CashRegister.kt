@@ -59,6 +59,9 @@ fun sellProduct(product: Dispenser, cRegister: CashRegister)
             coinsInserted = coinsInserted + readln().toInt()
             coinsRequired = price - coinsInserted
         }
+        println()
+
+        cRegister.acceptAmount(coinsInserted)
     }
 }
 
